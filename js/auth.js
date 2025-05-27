@@ -56,4 +56,29 @@ document.querySelector("#login-form").addEventListener("submit", function(e) {
     window.location.href = "index.html";
 });
 
+const nameSpan = document.querySelector("#nbr-user-name");
+
+if (nameSpan) {
+    const currentUser = loadFromStorage("currentUser");
+    if (!currentUser) {
+        if (window.location.pathname !== "/login.html") {
+            window.location.href = "login.html";
+        }
+  }
+
+    else {
+        nameSpan.textContent = currentUser;
+    }
+}
+
+
+const logoutBtn = document.querySelector("#btn-logout");
+if(logoutBtn) {
+    logoutBtn.addEventListener("click", function () {
+        localStorage.removeItem("currentUser");
+        window.location.href = "login.html";
+    });
+}
+
+
 
