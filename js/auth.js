@@ -1,4 +1,3 @@
-//  הרשמה והתחברות (usersList, currentUser)
 document.querySelector("#register-form").addEventListener("submit", function (e){
     e.preventDefault();
 
