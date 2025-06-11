@@ -1,15 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/mybookings.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Bookings</title>
+  <link rel="stylesheet" href="css/mybookings.css" />
+  <script src="js/data/amsterdam.js"></script>
+  <script defer src="js/bookings.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="favorites.html">Favorites</a>
+      <a href="mybookings.html">My bookings</a>
+      <span id="nbr-user-name"></span>
+      <button id="btn-logout">Log out</button>
+    </nav>
+  </header>
 
-    <button id="btn-logout">Log out</button>
+  <main id="bookings-container">
+    <h1>My Bookings</h1>
 
-  </body>
+    <div id="tabs">
+      <button class="tab-button active" data-target="future">Upcoming</button>
+      <button class="tab-button" data-target="past">Past</button>
+    </div>
+
+    <div id="future-bookings" class="tab-section active">
+      <div id="future-list"></div>
+    </div>
+
+    <div id="past-bookings" class="tab-section">
+      <div id="past-list"></div>
+    </div>
+  </main>
+</body>
 </html>

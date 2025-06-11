@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="css/favorites.css" />
-  </head>
-  <body></body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Favorites</title>
+  <link rel="stylesheet" href="css/favorites.css" />
+  <script src="js/data/amsterdam.js"></script>
+  <script defer src="js/favorites.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="favorites.html">Favorites</a>
+      <a href="mybookings.html">My bookings</a>
+      <span id="nbr-user-name"></span>
+      <button id="btn-logout">Log out</button>
+    </nav>
+  </header>
+
+  <main id="favorites-container">
+    <h1>My Favorite Apartments</h1>
+    <div id="favorites-list"></div>
+  </main>
+</body>
 </html>

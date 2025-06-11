@@ -1,14 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <link rel="icon" href="images/icon.ico" type="image/x-icon" />
-    <script src="js/data/amsterdam.js"></script>
-    <script>
-      console.log(amsterdam);
-    </script>
-  </head>
-  <body></body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rent Apartment</title>
+  <link rel="stylesheet" href="css/rent.css" />
+  <script src="js/data/amsterdam.js"></script>
+  <script src="js/rent.js" defer></script>
+</head>
+<body>
+  <header class="navbar">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="favorites.html">Favorites</a>
+      <a href="mybookings.html">My bookings</a>
+      <span id="nbr-user-name"></span>
+      <button id="btn-logout">Log out</button>
+    </nav>
+  </header>
+
+  <main id="rent-container">
+    <section id="listing-details"></section>
+
+    <section id="rental-form">
+      <h2>Book this apartment</h2>
+      <form id="booking-form">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" required />
+
+        <label for="creditCard">Credit Card Number:</label>
+        <input type="text" id="creditCard" required />
+
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" required />
+
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" required />
+
+        <button type="submit">Confirm Booking</button>
+      </form>
+
+      <p id="booking-message"></p>
+    </section>
+  </main>
+</body>
 </html>
