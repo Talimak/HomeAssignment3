@@ -5,7 +5,6 @@ window.addEventListener('DOMContentLoaded', () => {
     showUserName();
 });
 
-
 function showUserName() {
     const userNameSpan = document.querySelector("#nbr-user-name");
     const currentUser = localStorage.getItem("currentUser");
