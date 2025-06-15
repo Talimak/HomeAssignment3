@@ -37,6 +37,7 @@ function addApartmentCard(apId, apURL, apName, apDescription, apPic){
     const listingSection = document.querySelector('#listing');
     const cardDiv = createElement('div', 'card');
     cardDiv.id = apId; // for easy access later for renting
+    
     const id = createElement('p', 'card-id', ApartmentID,{apId});
     const cardTitle = createElement('h3', 'card-title', apName);
     const cardDescription = createElement('p', 'card-description');
