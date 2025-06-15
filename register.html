@@ -9,13 +9,16 @@
   </head>
   <body>
     <section class="page-content">
+      <div class="logo-container">
+        <img src="images/sitelogo.png" alt="Site logo" class="site-logo" />
+      </div>
       <h1>Register</h1>
       <form id="register-form">
         <label for="user-name">User Name</label>
-        <input type="text" id="user-name" required/>
+        <input type="text" id="user-name"  placeholder="User name" required/>
 
         <label for="password">Password (min 8 characters)</label>
-        <input type="password" id="password" minlength="8" required/>
+        <input type="password" id="password" minlength="8" placeholder="Password" required/>
 
         <button type="submit">Register</button>
       </form>
