@@ -1,9 +1,6 @@
 //  הרשמה והתחברות (usersList, currentUser)
-const registerForm = document.querySelector("#register-form")
-
-if (registerForm) {
-    registerForm.addEventListener("submit", function(e) {
-        e.preventDefault();
+document.querySelector("#register-form").addEventListener("submit", function (e){
+    e.preventDefault();
 
         const usernameInput = document.querySelector("#user-name").value.trim();
         const passwordInput = document.querySelector("#password").value;
