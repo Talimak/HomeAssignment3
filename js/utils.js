@@ -2,7 +2,17 @@ window.addEventListener('DOMContentLoaded', () => {
     logoutBtnHandler();
     // checkIfLoggedIn();
     appendApartmentCards(amsterdam);
+    showUserName();
 });
+
+
+function showUserName() {
+    const userNameSpan = document.querySelector("#nbr-user-name");
+    const currentUser = localStorage.getItem("currentUser");
+    if (currentUser && userNameSpan) {
+        userNameSpan.textContent = `Welcome, ${currentUser}`;
+    }
+}
 
 function logoutBtnHandler() {
     const logoutBtn = document.querySelector('#btn-logout');
@@ -59,5 +69,6 @@ function appendApartmentCards(amsterdam) {
             apartment.description,
             apartment.picture_url
         );
+        
     });
 }
