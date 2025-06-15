@@ -1,6 +1,9 @@
 //  הרשמה והתחברות (usersList, currentUser)
-document.querySelector("#register-form").addEventListener("submit", function (e){
-    e.preventDefault();
+const registerForm = document.querySelector("#register-form");
+
+if (registerForm) {
+    registerForm.addEventListener("submit", function(e) {
+        e.preventDefault();
 
         const usernameInput = document.querySelector("#user-name").value.trim();
         const passwordInput = document.querySelector("#password").value;
@@ -11,15 +14,13 @@ document.querySelector("#register-form").addEventListener("submit", function (e)
             return;
         }
 
-        let userListStr = localStorage.getItem("usersList");
+        let userListStr = loadFromStorage("usersList");
         let usersList;
 
         if (userListStr !== null) {
-            usersList = JSON.parse(userListStr);
+            usersList = userListStr;
         }
-
         else {
-            
             usersList = [];
         }
 
@@ -39,8 +40,8 @@ document.querySelector("#register-form").addEventListener("submit", function (e)
 
         usersList.push(newUser);
 
-        localStorage.setItem("userList", JSON.stringify(usersList));
-        localStorage.setItem("currentUser", usernameInput);
+        saveToStorage("usersList",usersList);
+       saveToStoragetem("currentUser", usernameInput);
 
         window.location.href = "index.html";
     });
@@ -55,18 +56,18 @@ if (loginForm) {
         const passwordInput = document.querySelector("#password").value;
         const errorElement = document.querySelector("#error");
     
-        let userListStr = localStorage.getItem("usersList");
+        let userListStr = loadFromStorage("usersList");
         let usersList;
     
         if (userListStr !== null) {
-            usersList = JSON.parse(userListStr)
+            usersList = userListStr;
         }
         else {
             usersList = [];
         }
     
         let foundUser = usersList.find(function(user){
-            return user.username === loginUserName && user.password === passwordInput;
+            return user.username === usernameInput && user.password === passwordInput;
     
         });
     
@@ -75,7 +76,7 @@ if (loginForm) {
             return;
         }
     
-        localStorage.setItem("currentUser", usernameInput);
+       saveToStorage("currentUser", usernameInput);
         window.location.href = "index.html";
 
     });
